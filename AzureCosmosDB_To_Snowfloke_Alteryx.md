@@ -29,6 +29,56 @@ Here is Example
 <img
 src="https://github.com/afzal94551/Data_PIPE_in_Different_Tech/blob/00d7a12ce0ebd5c0ddee850fe35c585c486b7d11/Create_Connection_Cosmos_1.png" width="800"/>
 
+for Credentials
+<img
+src="https://github.com/afzal94551/Data_PIPE_in_Different_Tech/blob/00d7a12ce0ebd5c0ddee850fe35c585c486b7d11/Create_Connection_Cosmos_2.png" width="800"/>
+
+Now Create Connecto for Snowflake
+
+Data Source Connection
+<img
+src="https://github.com/afzal94551/Data_PIPE_in_Different_Tech/blob/00d7a12ce0ebd5c0ddee850fe35c585c486b7d11/Create_Connection_Snowflake_1.png" width="800"/>
+
+Credentials Configuration
+<img
+src="https://github.com/afzal94551/Data_PIPE_in_Different_Tech/blob/00d7a12ce0ebd5c0ddee850fe35c585c486b7d11/Create_Connection_Snowflake_2.png" width="800"/>
+
+Now Create Input Data Flow and connect with your Azure CosmosDB Connetion that;
+
+here is flow example;
+
+<img
+src="https://github.com/afzal94551/Data_PIPE_in_Different_Tech/blob/00d7a12ce0ebd5c0ddee850fe35c585c486b7d11/Alteryx_Flow_1.png"
+width="800"/>
+
+use Select tool to select require column and match column names 
+<img
+src="https://github.com/afzal94551/Data_PIPE_in_Different_Tech/blob/00d7a12ce0ebd5c0ddee850fe35c585c486b7d11/Alteryx_Flow_2.png"
+width="800"/>
+
+
+Now Add a Output Data Flow and Configure 
+1. Table give your Snowflake Table name where you want to insert to update data
+2. Output Options - choose your option in my case  I have choose ** Update: Insert if New ** this flow will check if record found then it will udpate else it will create new records
+3. Append Field Map - this is for Mapping  I choose By Field Name
+4. Key for Update - Select your Priamary Key or Unique Indetifier
+
+here is example
+
+<img
+src="https://github.com/afzal94551/Data_PIPE_in_Different_Tech/blob/00d7a12ce0ebd5c0ddee850fe35c585c486b7d11/Alteryx_Flow_3.png"
+width="800"/>
+
+
++ **Your Pipeline is create;**
+
+
+
+
+
+
+
+
 
 
 
