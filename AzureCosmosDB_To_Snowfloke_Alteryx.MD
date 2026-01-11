@@ -4,3 +4,8 @@ I have data in Azure CosmosDB with NoSQL API My CosmosDB is also Linked with Azu
 ## Solution
 
 ### 2. Alteryx
+
+We need two ODBC Driver 1. Azure CosmosDB 2. Snowflake to connect both data 
+if we use Alteryx we do not need to create Stage in Snowflake but we need ODBC Driver for both Database
+
+1.   ![Azure CosmosDB ODBC Driver]("https://learn.microsoft.com/en-us/azure/cosmos-db/odbc-driver")
