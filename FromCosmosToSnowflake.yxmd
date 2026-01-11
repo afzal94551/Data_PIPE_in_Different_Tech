@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2025.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="66" y="30" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File />
+          <FormatSpecificOptions UseDcm="true" Format="23" RecordLimit="">
+            <Query />
+            <TableStyle>Quoted</TableStyle>
+            <CacheData>False</CacheData>
+            <Table>"Panda"."Product"."Product"</Table>
+            <SessionReadOnly>True</SessionReadOnly>
+            <ReadUncommitted>False</ReadUncommitted>
+            <Connection DcmType="ConnectionId" DcmTitle="PandaCosmos — Afzal" DcmSchemaId="database-odbc-dsn-msanalytics-oauth-azure-ayxapp">438bbdaf-24c2-4abb-9227-24126c0971e4</Connection>
+            <NoProgress>True</NoProgress>
+            <PostSQL />
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <PreSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Input Tool Getting data from Azure Cosmos</AnnotationText>
+          <DefaultAnnotationText>dcm:PandaCosmos — Afzal
+Table="Panda"."Product"."Product"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="PrimaryKey" name="id" size="255" source="File: &quot;Panda&quot;.&quot;Product&quot;.&quot;Product&quot;" type="V_WString" />
+            <Field name="launch_date" source="File: &quot;Panda&quot;.&quot;Product&quot;.&quot;Product&quot;" type="Date" />
+            <Field name="market_segment" size="255" source="File: &quot;Panda&quot;.&quot;Product&quot;.&quot;Product&quot;" type="V_WString" />
+            <Field name="maternity_covered" source="File: &quot;Panda&quot;.&quot;Product&quot;.&quot;Product&quot;" type="Int64" />
+            <Field name="mental_health_covered" source="File: &quot;Panda&quot;.&quot;Product&quot;.&quot;Product&quot;" type="Int64" />
+            <Field name="metal_tier" size="255" source="File: &quot;Panda&quot;.&quot;Product&quot;.&quot;Product&quot;" type="V_WString" />
+            <Field name="out_of_pocket_maximum" source="File: &quot;Panda&quot;.&quot;Product&quot;.&quot;Product&quot;" type="Int64" />
+            <Field name="plan_type" size="255" source="File: &quot;Panda&quot;.&quot;Product&quot;.&quot;Product&quot;" type="V_WString" />
+            <Field name="prescription_covered" source="File: &quot;Panda&quot;.&quot;Product&quot;.&quot;Product&quot;" type="Int64" />
+            <Field name="preventive_care_covered" source="File: &quot;Panda&quot;.&quot;Product&quot;.&quot;Product&quot;" type="Int64" />
+            <Field name="product_id" size="255" source="File: &quot;Panda&quot;.&quot;Product&quot;.&quot;Product&quot;" type="V_WString" />
+            <Field name="product_key" source="File: &quot;Panda&quot;.&quot;Product&quot;.&quot;Product&quot;" type="Int64" />
+            <Field name="product_name" size="255" source="File: &quot;Panda&quot;.&quot;Product&quot;.&quot;Product&quot;" type="V_WString" />
+            <Field name="regulatory_approval" source="File: &quot;Panda&quot;.&quot;Product&quot;.&quot;Product&quot;" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="318" y="30" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File />
+          <Passwords />
+          <Disable>False</Disable>
+          <FormatSpecificOptions UseDcm="true" MaxRecords="" Format="23">
+            <TableStyle>Quoted</TableStyle>
+            <AppendMap>
+              <AppendMapping mode="ByName" />
+            </AppendMap>
+            <TransactionMessages>False</TransactionMessages>
+            <Table>PRODUCTID</Table>
+            <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+            <KeyForUpdate>
+              <KU_Fields>
+                <KU_Field key="PRODUCT_ID" />
+              </KU_Fields>
+            </KeyForUpdate>
+            <OutputOption>Upsert</OutputOption>
+            <Connection DcmType="ConnectionId" DcmTitle="SnowDriver — SnowID" DcmSchemaId="database-odbc-dsn-snowflake">9364b13d-4c0c-455b-8c25-a2a61c0913ad</Connection>
+            <PostSQL />
+            <TransactionSize>10000</TransactionSize>
+            <PreSQL />
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Output- Insert or Update data into Snowflake</AnnotationText>
+          <DefaultAnnotationText>dcm:SnowDriver — SnowID
+Table=PRODUCTID</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="186" y="30" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="metal_tier" selected="True" rename="METAL_TIER" />
+            <SelectField field="plan_type" selected="True" rename="PLAN_TYPE" />
+            <SelectField field="product_id" selected="True" rename="PRODUCT_ID" />
+            <SelectField field="product_name" selected="True" rename="PRODUCT_NAME" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Select and Rename Field That need to be Insert or Update in Snowflake Table</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <DefaultTZ value="Local" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <IsTemplate value="False" />
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>FromCosmosToSnowflake</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="fea6eacf-a46b-411f-a02f-8178d33bb197" />
+      <Telemetry>
+        <PreviousWorkflowId value="1143f03d-79e5-4420-900c-ce29f8a21b8d" />
+        <OriginWorkflowId value="1143f03d-79e5-4420-900c-ce29f8a21b8d" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
